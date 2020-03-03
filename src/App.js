@@ -5,6 +5,7 @@ import "./pages/homepage/homepage.styles.scss";
 import { Switch, Route } from "react-router-dom";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
+import SignInandSignUp from "./pages/signin-and-signup/signin-and-signup.component";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route exact path="/shop">
           <ShopPage />
+        </Route>
+        <Route exact path="/signin">
+          <SignInandSignUp/>
         </Route>
       </Switch>
     </div>
