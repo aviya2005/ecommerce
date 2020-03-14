@@ -3,10 +3,13 @@ import FormInput from "../form-input/form-input.component";
 import { useState } from "react";
 import "./sign-in.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
+
 export function SignIn() {
   const [inputValues, setInputValues] = useState({ email: "", password: "" });
   const handleChange = event => {
-    setInputValues({...inputValues, [event.target.name]: event.target.value });
+    event.preventDefault();
+    setInputValues({ ...inputValues, [event.target.name]: event.target.value });
   };
   const handleSubmit = event => {
     event.preventDefault();
@@ -34,8 +37,9 @@ export function SignIn() {
           onChange={handleChange}
           required
         />
-        <CustomButton type='submit'>
-          SUBMIT
+        <CustomButton type="submit">SUBMIT</CustomButton>
+        <CustomButton onClick={signInWithGoogle}>
+          Sign in with Google
         </CustomButton>
       </form>
     </div>
