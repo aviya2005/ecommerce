@@ -37,10 +37,13 @@ export function SignIn() {
           onChange={handleChange}
           required
         />
-        <CustomButton type="submit">SUBMIT</CustomButton>
-        <CustomButton onClick={signInWithGoogle}>
-          Sign in with Google
-        </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">SUBMIT</CustomButton>
+          <CustomButton onClick={(event)=>{event.preventDefault()
+            signInWithGoogle()}} isGoogleSignIn>
+            Sign in with Google
+          </CustomButton>
+        </div>
       </form>
     </div>
   );
