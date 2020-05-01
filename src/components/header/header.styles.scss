@@ -4,11 +4,19 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  @media screen and (max-width: 800px) {
+      margin: 0;
+      padding: 10px 20px;
+  }
 
   .logo-container {
     height: 100%;
     width: 70px;
-    padding: 25px;
+    padding: 20px;
+    @media screen and (max-width: 800px) {
+     width: 50px; 
+     padding: 5px;
+    }
   }
 
   .options {
@@ -18,7 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
+    @media screen and (max-width: 800px) {
+      font-size: large;
+      width: 100%;
+    }
     .option {
       cursor: pointer;
       padding: 10px 15px;
